@@ -1,11 +1,36 @@
-<div align="center">
+# DigitalLab Website
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Official website for DigitalLab Agency.
 
-  <h1>Built with AI Studio</h2>
+## Tech Stack
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- Vercel Hosting
+- GitHub Version Control
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Project Structure
 
-</div>
+```
+assets/
+css/
+js/
+index.html
+robots.txt
+sitemap.xml
+```
+
+## Development Workflow
+
+1. Open project in Phoenix
+2. Edit files
+3. Save (⌘ + S)
+4. Open GitHub Desktop
+5. Commit changes
+6. Push Origin
+7. Vercel deploys automatically
+
+## Live Website
+
+https://digitallab.id
