@@ -1,0 +1,52 @@
+/* Responsive stability pass: perbaikan struktur box-model untuk seluler */
+html { max-width: 100%; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { max-width: 100%; overflow-x: hidden; overscroll-behavior-x: none; }
+main, .site-footer { max-width: 100%; overflow-x: hidden; }
+h1, h2 { overflow-wrap: break-word; }
+
+/* Menjaga stabilitas tata letak header saat diubah oleh javascript */
+.site-header { will-change: transform; }
+
+.header-inner { 
+    background: transparent; 
+    border: 1px solid transparent; 
+    border-radius: 999px; 
+    box-shadow: 0 0 0 rgba(0,0,0,0); 
+    height: 4.25rem; 
+    margin-top: .55rem; 
+    padding: 0 1rem; 
+    backdrop-filter: blur(0px) saturate(100%); 
+    -webkit-backdrop-filter: blur(0px) saturate(100%); 
+    transition: background-color .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease), backdrop-filter .5s var(--ease), -webkit-backdrop-filter .5s var(--ease); 
+}
+
+/* Formulasi Frosted Transparent Glass Premium */
+.site-header.scrolled .header-inner { 
+    /* Mengurangi kepekatan warna dasar menjadi 62% agar elemen di belakangnya menembus dengan indah */
+    background: color-mix(in srgb, var(--bg) 62%, transparent); 
+    
+    /* Menaikkan pembiasan ke 24px dan menambah saturasi 180% agar objek di belakang terlihat blur berembun tapi tetap hidup */
+    backdrop-filter: blur(24px) saturate(180%); 
+    -webkit-backdrop-filter: blur(24px) saturate(180%); 
+    
+    /* Batas tipis yang presisi menggunakan adaptasi warna teks rendah untuk memisahkan lapisan kaca dari konten utama */
+    border: 1px solid color-mix(in srgb, var(--text) 14%, transparent); 
+    
+    /* Perpaduan bayangan luar yang lembut dan inset shadow 1px di bagian atas untuk menciptakan efek kilau sudut kaca asli */
+    box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.06), 
+                inset 0 1px 0px rgba(255, 255, 255, 0.15); 
+}
+
+/* Kalibrasi jarak elevasi animasi untuk layar mobile agar tidak terpotong (clipping) */
+@media (max-width: 600px) {
+  .header-inner, .site-header.scrolled .header-inner { height: 3.7rem; margin-top: .35rem; padding: 0 .65rem; }
+  .hero-art { overflow: clip; }
+  /* Mengurangi jarak loncatan elemen dari bawah menjadi 0.4rem (sangat aman dari potongan kontainer) */
+  .reveal, .split-reveal { transform: translateY(.4rem); transition-duration: .56s; }
+}
+
+/* Menonaktifkan efek hover pada perangkat layar sentuh agar elemen tidak tersangkut posisinya */
+@media (hover: none) { 
+  .service-card:hover, .project-card:hover .project-image { transform: none; }
+  .tech-image:hover img { transform: none; } 
+}

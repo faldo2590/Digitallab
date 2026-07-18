@@ -1,0 +1,277 @@
+/* Enhancements: kept separate so the original layout remains easy to maintain. */
+
+/* Floating navigation only appears after the visitor begins scrolling. */
+.site-header.scrolled {
+  background: transparent;
+  border-bottom: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.site-header.scrolled .header-inner {
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.07);
+  height: 4.25rem;
+  margin-top: 0.55rem;
+  padding: 0 1rem;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* The supplied white mark automatically remains legible in both site themes. */
+.brand-logo {
+  display: block;
+  filter: invert(1);
+  height: auto;
+  transition: filter 0.45s var(--ease);
+  width: 7.75rem;
+}
+:root[data-theme="dark"] .brand-logo {
+  filter: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] .brand-logo {
+    filter: none;
+  }
+}
+
+/* Four lightweight, lazy-loaded tech visuals extend the existing visual language. */
+.tech-showcase {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 6.5rem;
+}
+.tech-image {
+  aspect-ratio: 4 / 5;
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  margin: 0;
+  overflow: hidden;
+}
+.tech-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+  width: 100%;
+}
+.tech-image:hover img {
+  transform: scale(1.045);
+}
+
+/* A professional, high-contrast footer gives the white brand mark a dedicated home. */
+.site-footer {
+  background: #14141a;
+  color: #f7f7f5;
+  margin-top: 1.5rem;
+  padding: 4.5rem 0 1.4rem;
+}
+.site-footer .footer-top {
+  align-items: start;
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.5fr 0.55fr 0.75fr;
+  padding-bottom: 4rem;
+}
+.footer-brand .brand-logo {
+  filter: none;
+  width: 9.5rem;
+}
+.footer-intro > p {
+  color: #aaaab0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 1.35rem 0;
+  max-width: 19rem;
+}
+.footer-email {
+  display: inline-flex;
+  font-size: 0.85rem;
+  font-weight: 650;
+  gap: 0.55rem;
+}
+.footer-email span {
+  color: #b6ff62;
+  transition: transform 0.3s var(--ease);
+}
+.footer-email:hover span {
+  transform: translate(0.18rem, -0.18rem);
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.footer-column a,
+.footer-column span {
+  color: #b7b7bd;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+.footer-column a:hover {
+  color: #fff;
+}
+.footer-label {
+  color: #707078;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+.footer-availability {
+  align-items: center;
+  color: #d8d8dc;
+  display: flex;
+  font-size: 0.7rem;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+}
+.footer-availability i {
+  background: #a7e66f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(167, 230, 111, 0.1);
+  height: 0.38rem;
+  width: 0.38rem;
+}
+.site-footer .footer-bottom {
+  color: #777780;
+  font-size: 0.68rem;
+  padding-top: 1.25rem;
+}
+.site-footer .footer-bottom div {
+  display: flex;
+  gap: 1.3rem;
+}
+.site-footer .footer-bottom a {
+  color: #aaaab0;
+}
+.site-footer .footer-bottom a:hover {
+  color: #fff;
+}
+
+/* First-view motion uses only transform and opacity for smooth, low-cost frames. */
+html.js .hero h1 span {
+  display: block;
+  opacity: 0;
+  transform: translateY(0.8em);
+}
+body.page-ready .hero-copy {
+  animation: hero-fade 0.55s var(--ease) both;
+  opacity: 1;
+  transform: none;
+}
+body.page-ready .hero h1 span {
+  animation: hero-line 0.85s var(--ease) both;
+  animation-delay: 0.18s;
+}
+body.page-ready .hero h1 span + span {
+  animation-delay: 0.3s;
+}
+body.page-ready .hero-description {
+  animation: hero-fade 0.7s var(--ease) both;
+  animation-delay: 0.45s;
+}
+body.page-ready .hero-actions {
+  animation: hero-fade 0.7s var(--ease) both;
+  animation-delay: 0.54s;
+}
+body.page-ready .hero-art {
+  animation: hero-art-in 0.9s var(--ease) both;
+  animation-delay: 0.16s;
+  opacity: 1;
+}
+body.page-ready .hero-proof {
+  animation: hero-fade 0.75s var(--ease) both;
+  animation-delay: 0.68s;
+  opacity: 1;
+  transform: none;
+}
+@keyframes hero-line {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hero-art-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .tech-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .site-footer .footer-top {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .site-footer .footer-intro {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 600px) {
+  .site-header.scrolled .header-inner {
+    height: 3.7rem;
+    margin-top: 0.35rem;
+    padding: 0 0.65rem;
+  }
+  .brand-logo {
+    width: 6.8rem;
+  }
+  .tech-showcase {
+    gap: 0.7rem;
+    padding-bottom: 4.5rem;
+  }
+  .site-footer {
+    padding-top: 3.2rem;
+  }
+  .site-footer .footer-top {
+    gap: 2.2rem 1.2rem;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 2.5rem;
+  }
+  .footer-brand .brand-logo {
+    width: 8.2rem;
+  }
+  .site-footer .footer-bottom {
+    gap: 0.8rem;
+  }
+  .site-footer .footer-bottom div {
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .hero h1 span {
+    opacity: 1;
+    transform: none;
+  }
+  body.page-ready .hero-copy,
+  body.page-ready .hero h1 span,
+  body.page-ready .hero-description,
+  body.page-ready .hero-actions,
+  body.page-ready .hero-art,
+  body.page-ready .hero-proof {
+    animation: none;
+  }
+}

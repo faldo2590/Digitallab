@@ -1,0 +1,217 @@
+@media (max-width: 900px) {
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .service-featured {
+    grid-column: span 2;
+  }
+  .product-layout,
+  .reasons-layout,
+  .faq {
+    gap: 3rem;
+    grid-template-columns: 1fr;
+  }
+  .product-copy,
+  .reasons-title {
+    position: static;
+  }
+  .portfolio-scroll {
+    grid-template-columns: 1.05fr 1fr 1fr;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+    width: 100%;
+  }
+  .portfolio-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .project-card {
+    min-width: min(75vw, 25rem);
+  }
+  .project-image {
+    height: 25rem;
+  }
+  .faq .section-heading h2 {
+    margin-bottom: 0;
+  }
+  .hero-art {
+    margin-right: auto;
+    width: 100%;
+  }
+  .hero-proof {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .hero-proof div {
+    width: 100%;
+  }
+  .landing-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .conversion-path {
+    bottom: auto;
+    left: auto;
+    margin-top: 2.5rem;
+    position: static;
+    right: auto;
+  }
+  .footer-top > p {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --container: min(100% - 2rem, 1240px);
+  }
+  /* Backdrop blur is recalculated on every scroll frame while the fixed
+     header is on screen. A smaller radius keeps that cost low on iOS
+     Safari and avoids the stutter that shows up on longer scrolls. */
+  .site-header.scrolled,
+  .site-header.scrolled .header-inner {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .mobile-menu {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  .section {
+    padding: 5rem 0;
+  }
+  .site-header {
+    height: 4.5rem;
+  }
+  .hero {
+    padding-top: 8.5rem;
+  }
+  .hero-description {
+    font-size: 0.98rem;
+  }
+  .hero-art {
+    height: 17rem;
+    margin-bottom: 2.7rem;
+    margin-top: 3.4rem;
+  }
+  .browser-card {
+    border-width: 4px;
+  }
+  .floating-note {
+    right: -0.5rem;
+    top: 8%;
+  }
+  .hero-proof div {
+    flex-wrap: wrap;
+    gap: 1rem 1.6rem;
+  }
+  .hero-proof span {
+    font-size: 1rem;
+  }
+  .section-heading h2 {
+    margin-bottom: 2.3rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-featured {
+    grid-column: auto;
+  }
+  .service-card {
+    min-height: 20rem;
+  }
+  .service-featured {
+    min-height: 24rem;
+  }
+  .product-item {
+    grid-template-columns: 2.6rem 1fr 0.8rem;
+  }
+  .landing-panel {
+    border-radius: 1.25rem;
+    min-height: 0;
+  }
+  .conversion-path {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-top: 2rem;
+  }
+  .conversion-path i {
+    height: 1.2rem;
+    margin-left: 0.35rem;
+    width: 1px;
+  }
+  .portfolio {
+    padding-bottom: 4rem;
+  }
+  .portfolio-scroll {
+    margin-left: 1rem;
+    padding-left: 0;
+    width: calc(100% - 1rem);
+  }
+  .project-card {
+    min-width: 78vw;
+  }
+  .project-image {
+    height: 22rem;
+  }
+  .reasons-list {
+    margin-top: -1rem;
+  }
+  .reason {
+    grid-template-columns: 2.5rem 1fr;
+    padding: 1.8rem 0;
+  }
+  .testimonial-card {
+    border-radius: 1rem;
+  }
+  .testimonial-control {
+    bottom: 1.4rem;
+    right: 1.4rem;
+  }
+  .testimonial blockquote {
+    margin-bottom: 2.3rem;
+  }
+  .footer-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-links {
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 350px) {
+  .brand {
+    font-size: 0.82rem;
+  }
+  .header-actions {
+    gap: 0.2rem;
+  }
+  .hero-art {
+    height: 15rem;
+  }
+  .art-panel {
+    bottom: 7%;
+    left: 7%;
+  }
+  .art-label {
+    left: 7%;
+  }
+  .floating-note {
+    font-size: 0.53rem;
+  }
+}
