@@ -160,19 +160,22 @@ html.js .hero h1 span {
   opacity: 0;
   transform: translateY(0.8em);
 }
-body.page-ready .hero-copy {
+body.page-ready .hero-copy,
+body.page-ready .svc-hero-copy {
   animation: hero-fade 0.55s var(--ease) both;
   opacity: 1;
   transform: none;
 }
-body.page-ready .hero h1 span {
+body.page-ready .hero h1 span,
+body.page-ready .svc-hero-title {
   animation: hero-line 0.85s var(--ease) both;
   animation-delay: 0.18s;
 }
 body.page-ready .hero h1 span + span {
   animation-delay: 0.3s;
 }
-body.page-ready .hero-description {
+body.page-ready .hero-description,
+body.page-ready .svc-hero-desc {
   animation: hero-fade 0.7s var(--ease) both;
   animation-delay: 0.45s;
 }
@@ -180,12 +183,14 @@ body.page-ready .hero-actions {
   animation: hero-fade 0.7s var(--ease) both;
   animation-delay: 0.54s;
 }
-body.page-ready .hero-art {
+body.page-ready .hero-art,
+body.page-ready .svc-hero-visual {
   animation: hero-art-in 0.9s var(--ease) both;
   animation-delay: 0.16s;
   opacity: 1;
 }
-body.page-ready .hero-proof {
+body.page-ready .hero-proof,
+body.page-ready .svc-stat-row {
   animation: hero-fade 0.75s var(--ease) both;
   animation-delay: 0.68s;
   opacity: 1;
@@ -262,16 +267,22 @@ body.page-ready .hero-proof {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.js .hero h1 span {
+  html.js .hero h1 span,
+  html.js .svc-hero-title {
     opacity: 1;
     transform: none;
   }
   body.page-ready .hero-copy,
+  body.page-ready .svc-hero-copy,
   body.page-ready .hero h1 span,
+  body.page-ready .svc-hero-title,
   body.page-ready .hero-description,
+  body.page-ready .svc-hero-desc,
   body.page-ready .hero-actions,
   body.page-ready .hero-art,
-  body.page-ready .hero-proof {
+  body.page-ready .svc-hero-visual,
+  body.page-ready .hero-proof,
+  body.page-ready .svc-stat-row {
     animation: none;
   }
 }
