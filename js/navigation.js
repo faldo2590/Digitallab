@@ -21,7 +21,7 @@
 
   const onScroll = () => {
     const y = window.scrollY;
-    header.classList.toggle("scrolled", y > 18);
+    header.classList.toggle("scrolled", y > 1);
     // Header stays put at all times now — no more hide-on-scroll-down.
     lastY = y;
     ticking = false;

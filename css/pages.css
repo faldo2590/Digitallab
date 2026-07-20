@@ -398,6 +398,7 @@
 }
 .svc-timeline-body p {
   color: var(--muted);
+  letter-spacing: -0.01em;
   max-width: 36rem;
 }
 
@@ -461,7 +462,7 @@
   border-top: 0;
 }
 .svc-faq-card details:last-child {
-  border-bottom: 0;
+  border-bottom: 0; 
 }
 
 /* --- Lime closing panel (distinct from the homepage's purple cta-panel) --- */
